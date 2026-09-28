@@ -12,8 +12,10 @@ services:
       - 19888:19888
       - 9000:9000
       - 8080:8080
-      - 9092:9092     # Kafka
-      - 2181:2181     # Zookeeper
+      - 9092:9092 # Kafka
+      - 2181:2181 # Zookeeper
+      - 4040:4040 # Spark UI de la première application
+      - 4041:4041 # Spark UI d'une seconde application simultanée
     volumes:
       - ./assets/:/shared_volume
     networks:
@@ -54,7 +56,7 @@ services:
     environment:
       - KAFKA_CLUSTERS_0_NAME=local
       - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=hadoop-master:9092
-      - KAFKA_CLUSTERS_0_ZOOKEEPER=hadoop-master:2181  
+      - KAFKA_CLUSTERS_0_ZOOKEEPER=hadoop-master:2181
 networks:
   hadoop:
     driver: bridge
