@@ -15,7 +15,7 @@ for ligne in sys.stdin:
         continue
 
     # À VOUS DE JOUER : complétez les deux lignes ci-dessous
-    cle = None      # TODO : le magasin
-    valeur = None   # TODO : le montant de l'achat
+    cle = champs[2]     # TODO : le magasin
+    valeur = champs[4]   # TODO : le montant de l'achat
 
     print(f"{cle}\t{valeur}")
